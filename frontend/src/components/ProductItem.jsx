@@ -11,7 +11,7 @@ const ProductItem = ({ id, image, name, price }) => {
             <div className='absolute inset-0 bg-pink-200 rounded-xl opacity-60 -z-10 transform -translate-x-4 -translate-y-2 hover:opacity-100' />
 
             <div className='relative z-10'>
-                <img className='opacity-85 hover:opacity-100 transition-opacity ease-in-out duration-500' src={image[0]} alt={name} />
+                <img className='opacity-85 hover:opacity-100 transition-opacity ease-in-out rounded-xl' src={image[0]} alt={name} />
             </div>
 
             <p className='pt-3 pb-1 text-sm'>{name}</p>

@@ -7,7 +7,7 @@ const Footer = () => {
       <div className='flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm'>
 
         <div>
-          <div className="h-6 transition-transform duration-300 hover:scale-150 mb-5 mt-5">
+          <div className="h-6 mb-5 mt-5">
             <p>
               <span className='text-green-700'>joyful</span>
               <span className='text-blue-700'>crystals</span>

@@ -7,15 +7,15 @@ export default {
   theme: {
     extend: {
       animation: {
-        wobble: "scale 8s ease-in-out infinite", // Chaining both animations
+        wobble: 'wobble 9s ease-in-out infinite',
       },
       keyframes: {
-        scale: {
-          '0%': { transform: 'scale(1)' },
-          '33%': { transform: 'scale(1.005)' },
-          '66%': { transform: 'scale(0.995)' },  // Scaling up to 1.1x
-          '100%': { transform: 'scale(1)' },     // Back to normal size
-        }
+        wobble: {
+          '0%, 100%': { transform: 'translate(0, 0)' },
+          '25%': { transform: 'translate(-5px, 5px)' },
+          '50%': { transform: 'translate(5px, -5px)' },
+          '75%': { transform: 'translate(-5px, -5px)' },
+        },
       },
     },
   },

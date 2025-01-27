@@ -109,6 +109,7 @@ a.active hr{
     left: 88%;
   }
 
+
   @keyframes squiggle {
     0% {
       transform: translateX(0);
@@ -121,26 +122,4 @@ a.active hr{
     }
   }
   
-  .squiggly-border {
-    position: relative;
-    border: 2px solid transparent;
-    padding: 10px 15px;
-    background: white; /* Add white background to maintain the shape */
-    overflow: hidden;
-  }
-  
-  .squiggly-border::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 2px solid transparent;
-    border-radius: 10px;
-    background: linear-gradient(90deg, #ff69b4, #ff1493, #ff69b4);
-    background-size: 200% 100%;
-    background-position: 100% 0;
-    animation: squiggle 1s infinite ease-in-out;
-  }
   
