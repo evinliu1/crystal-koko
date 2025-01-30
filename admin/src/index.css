@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "Oliver-Regular";
+    src: local("Oliver-Regular"),
+      url("./fonts/Oliver-Regular.ttf") format("opentype");
+    font-weight: normal;
+  }
+
+*{
+    font-family: "Oliver-Regular";
+    font-size: 1.2rem;
+}
+
+select,input,textarea{
+    border: 1px solid #c2c2c2;
+    outline-color: #C586A5;
+    border-radius: 4px;
+}
+
+.active {
+    background-color: #ffebf5;
+    border-color: #C586A5;
+}
+
