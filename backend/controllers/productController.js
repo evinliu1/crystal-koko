@@ -6,7 +6,7 @@ const addProduct = async (req, res) => {
 
     try {
 
-        const {name, description, price, category, subCategory, bestseller} = req.body;
+        const {name, description, price, category, color, bestseller} = req.body;
 
         const image1 = req.files.image1 && req.files.image1[0];
         const image2 = req.files.image2 && req.files.image2[0];
@@ -28,7 +28,7 @@ const addProduct = async (req, res) => {
             price: Number(price),
             image: imagesUrl,
             category,
-            subCategory,
+            color,
             bestseller: bestseller === "true" ? true : false,
             date: Date.now()
         }

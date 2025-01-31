@@ -1,6 +1,5 @@
 import axios from 'axios'
 import React from 'react'
-import { use } from 'react';
 import { useState } from 'react';
 import { backendUrl } from '../App';
 import { toast } from 'react-toastify'
