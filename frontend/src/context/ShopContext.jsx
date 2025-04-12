@@ -9,7 +9,7 @@ export const ShopContext = createContext();
 const ShopContextProvider = (props) => {
 
     const currency = '$';
-    const delivery_fee = 10;
+    const delivery_fee = 0;
     const backendUrl = import.meta.env.VITE_BACKEND_URL
     const [cartItems,setCartItems] = useState({});
     const navigate = useNavigate();
@@ -82,7 +82,7 @@ const ShopContextProvider = (props) => {
     }
 
     useEffect(() => {
-        console.log(cartItems)
+
     }, [cartItems])
 
     const getCartAmount = () => {
@@ -122,7 +122,6 @@ const ShopContextProvider = (props) => {
 
         try {
             const response = await axios.post(backendUrl + '/api/cart/get', {}, {headers:{token}})
-            console.log(response.data);
             if (response.data.success) {
                 
                 
@@ -152,7 +151,7 @@ const ShopContextProvider = (props) => {
 
     const value = {
         products, currency, delivery_fee,
-        cartItems, addToCart,
+        cartItems, addToCart, setCartItems,
         getCartCount, updateQuantity,
         getCartAmount, navigate , backendUrl,
         setToken, token

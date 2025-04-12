@@ -1,5 +1,6 @@
 import React from 'react'
 import { assets } from '../assets/assets'
+import { Link, NavLink } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -10,7 +11,7 @@ const Footer = () => {
           <div className="h-6 mb-5 mt-5">
             <p>
               <span className='text-green-700'>joyful</span>
-              <span className='text-blue-700'>crystals</span>
+              <span className='text-blue-700'>koko</span>
             </p>
           </div>
             <p className='w-full md:w-2/3 text-gray-800'>
@@ -19,19 +20,21 @@ const Footer = () => {
         </div>
 
         <div>
-            <p className='text-xl font-medium mb-5'>COMPANY</p>
+            <p className='text-xl font-medium mb-5'>Quick Nav</p>
             <ul className='flex flex-col gap-1 text-gray-600'>
-                <li>HOME</li>
-                <li>DELIVERY</li>
-                <li>PRIVACY POLICY</li>
+                <li>Home</li>
+                <li>Orders</li>
+                <NavLink to="/profile" className="">
+                <p className="text-xl">Profile</p>
+                </NavLink>
             </ul>
         </div>
 
         <div>
             <p className='text-xl font-medium mb-5'>GET IN TOUCH</p>
             <ul className='flex flex-col gap-1 text-gray-600'>
-                <li>DUMMY XIAO HONG SHU USERNAME HERE</li>
-                <li>DUMMY WECHAT HERE</li>
+                <li>Find my XHS @ 苹果er</li>
+                <li>text : (404) 488 3080</li>
             </ul>
         </div>
 
@@ -39,7 +42,7 @@ const Footer = () => {
 
       <div>
         <hr />
-        <p className='py-5 text-sm text-center'>Copyright 2025@ joyfulcrystal.com - All Rights Reserved.</p>
+        <p className='py-5 text-sm text-center'>&copy; 2025 joyfulkoko.com - All Rights Reserved.</p>
       </div>
     </div>
   )

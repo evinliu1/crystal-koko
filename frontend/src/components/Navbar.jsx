@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="h-6 transition-transform duration-300 hover:scale-150">
           <p>
             <span className='text-green-700'>joyful</span>
-            <span className='text-blue-700'>crystals</span>
+            <span className='text-blue-700'>koko</span>
           </p>
         </div>
       </Link>

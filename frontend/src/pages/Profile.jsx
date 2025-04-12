@@ -2,7 +2,7 @@ import React from 'react';
 import Title from '../components/Title';
 import { assets } from '../assets/assets';
 
-const Contact = () => {
+const Profile = () => {
   return (
     <div className="relative">
       {/* Header Section */}
@@ -15,17 +15,14 @@ const Contact = () => {
         {/* Contact Information */}
         <div className="flex flex-col justify-center items-start gap-6 p-8 rounded-lg relative">
           <div className="absolute inset-0 rounded-lg opacity-60 -z-10"></div>
-          <h2 className="font-bold text-3xl text-gray-700">Our Store</h2>
-          <p className="text-gray-500 text-lg">'苹果er' @ Xiao Hong Shu</p>
-          <h2 className="font-bold text-3xl text-gray-700">Text us at</h2>
-          <p className="text-gray-500 text-lg">(404) 488 3080</p>
+          <h2 className="font-bold text-3xl text-gray-700">Oops - Nothing here yet</h2>
         </div>
 
         {/* Image Section */}
         <div className="relative overflow-hidden rounded-lg shadow-lg">
           <img
             className="w-full h-auto md:max-w-[480px]"
-            src={assets.contact_img}
+            src={assets.oops}
             alt="Contact Us"
           />
         </div>
@@ -34,4 +31,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Profile;
