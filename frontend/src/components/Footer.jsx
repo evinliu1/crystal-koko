@@ -10,7 +10,7 @@ const Footer = () => {
         <div>
           <div className="h-6 mb-5 mt-5">
             <p>
-              <span className='text-green-700'>joyful</span>
+              <span className='text-green-700'>crystal</span>
               <span className='text-blue-700'>koko</span>
             </p>
           </div>
@@ -22,8 +22,12 @@ const Footer = () => {
         <div>
             <p className='text-xl font-medium mb-5'>Quick Nav</p>
             <ul className='flex flex-col gap-1 text-gray-600'>
-                <li>Home</li>
-                <li>Orders</li>
+            <NavLink to="/" className="">
+                <p className="text-xl">Home</p>
+                </NavLink>
+                <NavLink to="/orders" className="">
+                <p className="text-xl">Orders</p>
+                </NavLink>
                 <NavLink to="/profile" className="">
                 <p className="text-xl">Profile</p>
                 </NavLink>
@@ -34,7 +38,6 @@ const Footer = () => {
             <p className='text-xl font-medium mb-5'>GET IN TOUCH</p>
             <ul className='flex flex-col gap-1 text-gray-600'>
                 <li>Find my XHS @ 苹果er</li>
-                <li>text : (404) 488 3080</li>
             </ul>
         </div>
 
@@ -42,7 +45,7 @@ const Footer = () => {
 
       <div>
         <hr />
-        <p className='py-5 text-sm text-center'>&copy; 2025 joyfulkoko.com - All Rights Reserved.</p>
+        <p className='py-5 text-sm text-center'>&copy; 2025 crystalkoko.com - All Rights Reserved.</p>
       </div>
     </div>
   )

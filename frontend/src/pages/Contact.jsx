@@ -17,8 +17,6 @@ const Contact = () => {
           <div className="absolute inset-0 rounded-lg opacity-60 -z-10"></div>
           <h2 className="font-bold text-3xl text-gray-700">Our Store</h2>
           <p className="text-gray-500 text-lg">'苹果er' @ Xiao Hong Shu</p>
-          <h2 className="font-bold text-3xl text-gray-700">Text us at</h2>
-          <p className="text-gray-500 text-lg">(404) 488 3080</p>
         </div>
 
         {/* Image Section */}
