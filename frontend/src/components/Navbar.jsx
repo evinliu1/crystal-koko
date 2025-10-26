@@ -19,7 +19,7 @@ const Navbar = () => {
     }
 
   return (
-    <div className='flex items-center justify-between py-5 font-medium mt-4'>
+    <div className='flex items-center justify-between py-5 font-medium mt-4 max-w-screen-lg mx-auto'>
       <Link to="/">
         <div className="h-6 transition-transform duration-300 hover:scale-150">
           <p>
@@ -39,11 +39,6 @@ const Navbar = () => {
         <p className="text-xl">COLLECTION</p>
         <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 scale-0 group-hover:scale-100 transition-transform duration-300 origin-left hidden" />
         </NavLink>
-        <NavLink to="/contact" className="flex flex-col items-center gap-1 group">
-        <p className="text-xl">CONTACT</p>
-        <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 scale-0 group-hover:scale-100 transition-transform duration-300 origin-left hidden" />
-        </NavLink>
-
       </ul>
 
       <div className='flex items-center gap-6'>
@@ -76,7 +71,6 @@ const Navbar = () => {
                 </div>
                 <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border' to='/'>HOME</NavLink>
                 <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border' to='/collection'>COLLECTION</NavLink>
-                <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border' to='/contact'>CONTACT</NavLink>
             </div>
         </div>
 

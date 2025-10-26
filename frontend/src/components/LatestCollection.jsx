@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import Title from './Title';
 import ProductItem from './ProductItem';
+import Hero from './Hero';
 
 const LatestCollection = () => {
 
@@ -13,6 +14,7 @@ const LatestCollection = () => {
     },[products])
 
   return (
+
     <div className='my-10 relative'>
       {/* Cascaded pastel pink background behind the entire collection */}
 

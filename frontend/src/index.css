@@ -14,8 +14,14 @@ a.active hr{
 }
 
 *{
-    font-family: "Oliver-Regular";
-    font-size: 1.2rem;
+    box-sizing: border-box;
+    /* removed font-size here so Tailwind font utilities work correctly */
+}
+
+/* apply the font-family on body only */
+body {
+  font-family: "Oliver-Regular", sans-serif;
+  font-size: 1rem; /* base size, Tailwind utilities will scale from here */
 }
 
 .prata-regular {
@@ -121,5 +127,74 @@ a.active hr{
       transform: translateX(0) rotate(5deg);
     }
   }
+
+  .interactive-letter {
+    display: inline-block; /* keeps layout stable while allowing transforms */
+    transition: transform 180ms cubic-bezier(.2,.9,.2,1), filter 180ms;
+    will-change: transform, filter;
+    transform-origin: center center;
+    pointer-events: none; /* cursor interacts with page, not individual letters */
+    user-select: none;
+  }
   
-  
+  /* Optional small visual lift when active (handled via inline style z-index in JS) */
+  .interactive-letter[style] {
+    filter: drop-shadow(0 6px 14px rgba(0,0,0,0.08));
+  }
+
+/* glass/arrow layout variables */
+:root{
+  --glass-max: 1280px; /* match max-w-screen-xl */
+  --glass-pad: 3rem;   /* px-12 = 3rem */
+  --arrow-size: 72px;  /* large arrow button size */
+}
+
+/* fixed arrows placed just outside the glass edges */
+.hero-arrow{
+  position: absolute; /* now positioned via JS relative to hero root */
+  transform: none;
+  z-index: 40;
+  width: var(--arrow-size);
+  height: var(--arrow-size);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.08);
+  border-radius: 9999px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: transform 160ms ease, background 160ms;
+  pointer-events: auto;
+}
+.hero-arrow:hover{ transform: scale(1.06); background: rgba(255,255,255,0.12); }
+
+/* left/right are set at runtime via JS when placed next to title */
+
+/* arrow symbol sizing */
+.hero-arrow .arrow-symbol{
+  font-size: 1.9rem;
+  line-height: 1;
+  color: #222;
+}
+
+/* responsive: reduce or hide arrows on small screens */
+@media (max-width: 768px){
+  :root{ --arrow-size: 52px; --glass-pad: 1rem; }
+  .hero-arrow{ width: var(--arrow-size); height: var(--arrow-size); }
+  .hero-arrow .arrow-symbol{ font-size: 1.4rem; }
+}
+@media (max-width: 420px){
+  .hero-arrow{ display: none; } /* hide on very small screens */
+}
+
+/* app shell fade transition used for route fade in/out */
+.app-shell {
+  transition: opacity 360ms ease;
+  opacity: 1;
+  will-change: opacity;
+}
+.app-shell.faded {
+  opacity: 0;
+  pointer-events: none; /* prevent interactions while fading out */
+}
+

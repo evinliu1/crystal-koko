@@ -1,38 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { ShopContext } from '../context/ShopContext'
-import { assets } from '../assets/assets';
-import Title from '../components/Title';
 import ProductItem from '../components/ProductItem';
+import Hero from '../components/Hero';
+import GlassPane from '../components/GlassPane';
 
 const Collection = () => {
 
   const {products} = useContext(ShopContext);
-  const [showFilter,setShowFilter] = useState(false);
   const [filterProducts,setFilterProducts] = useState([]);
   const [category,setCategory] = useState([]);
   const [subCategory,setSubCategory] = useState([]);
   const [sortType,setSortType] = useState('relavent');
 
-  const toggleCategory = (e) => {
-
-    if (category.includes(e.target.value)) {
-      setCategory(prev=> prev.filter(item => item !== e.target.value));
-    }
-    else {
-      setCategory(prev=> [...prev,e.target.value]);
-    }
-
-  }
-
-  const toggleSubCategory = (e) => {
-
-    if (subCategory.includes(e.target.value)) {
-      setSubCategory(prev=> prev.filter(item => item !== e.target.value));
-    }
-    else {
-      setSubCategory(prev=> [...prev,e.target.value]);
-    }
-  }
 
   const applyFilter = () => {
 
@@ -80,68 +59,11 @@ const Collection = () => {
   },[sortType])
 
   return (
-    <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t border-pink-200'>
-
-      {/* Filter Options */}
-      <div className='min-w-60'>
-        <p onClick={()=>setShowFilter(!showFilter)} className='ml-20 my-2 text-xl flex items-center gap-2'>FILTERS
-          <img className={`h-3 sm:hidden ${showFilter ? 'rotate-90' : ''}`} src={assets.dropdown_icon} alt="" />
-        </p>
-        {/* Category Filter */}
-        <div className={`hover:opacity-100 bg-pink-200 opacity-60 rounded-xl border border-pink-200 pl-5 py-3 mt-6 ${showFilter ? '': 'hidden'} sm:block`}>
-          <p className='mb-3 text-sm font-medium'>Categories</p>
-          <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
-            <p className='flex gap-2'>
-              <input className='w-3 cursor-pointer' type="checkbox" value={'Rutilated Quartz'} onChange={toggleCategory}/> Rutilated Quartz
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3 cursor-pointer' type="checkbox" value={'Phantom Quartz'} onChange={toggleCategory}/> Phantom Quartz
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3 cursor-pointer' type="checkbox" value={'Aquamarine'} onChange={toggleCategory}/> Aquamarine
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3 cursor-pointer' type="checkbox" value={'Herkimer Diamond'} onChange={toggleCategory}/> Herkimer Diamond
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3 cursor-pointer' type="checkbox" value={'Women'} onChange={toggleCategory}/> Women
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3 cursor-pointer' type="checkbox" value={'Kids'} onChange={toggleCategory}/> Kids
-            </p>
-          </div>
-        </div>
-        {/* SubCategory Filter */}
-        <div className={`hover:opacity-100 bg-pink-200 opacity-60 rounded-xl border border-pink-200 pl-5 py-3 my-5 ${showFilter ? '': 'hidden'} sm:block`}>
-          <p className='mb-3 text-sm font-medium'>TYPE</p>
-          <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Topwear'} onChange={toggleSubCategory} /> Topwear
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Bottomwear'} onChange={toggleSubCategory} /> Bottomwear
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Winterwear'} onChange={toggleSubCategory} /> Winterwear
-            </p>
-          </div>
-        </div>
-      </div>
-      
-        {/* Right Side */}
-      <div className='flex-1'>
-        
-        <div className='flex justify-between text-base sm:text-2xl mb-4'>
-          <Title text1={'FULL'} text2={'COLLECTION'}/>
-          {/* Product Sort */}
-          <select onChange={(e)=>setSortType(e.target.value)} className='border border-pink-200 text-sm px-2 mb-2' >
-            <option className='text-sm' value="low-high">Sort by: Low to High</option>
-            <option className='text-sm' value="high-low">Sort by: High to Low</option>
-          </select>
-        </div>
-
-        {/* Map Products */}
-        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 gap-y-6'>
+    <div className='flex flex-col gap-2 pt-40 px-80 '>
+      <GlassPane/>
+        {/* Products */}
+      <div className='flex-1 z-1'>
+        <div className='gap-20 gap-y-6 flex justify-between flex-wrap'>
           {
             filterProducts.map((item,index)=>(
               <ProductItem key={index} name={item.name} id={item._id} price={item.price} image={item.image} />

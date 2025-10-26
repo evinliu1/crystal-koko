@@ -6,16 +6,14 @@ const ProductItem = ({ id, image, name, price }) => {
     const { currency } = useContext(ShopContext);
 
     return (
-        <Link className='text-gray-700 cursor-pointer relative' to={`/product/${id}`}>
-            {/* Cascaded pastel pink box, slightly to the left and up */}
-            <div className='absolute inset-0 bg-pink-200 rounded-xl opacity-60 -z-10 transform -translate-x-4 -translate-y-2 hover:opacity-100' />
+        <Link className='text-gray-700 cursor-pointer relative ' to={`/product/${id}`}>
 
             <div className='relative z-10'>
-                <img className='opacity-85 hover:opacity-100 transition-opacity ease-in-out rounded-xl' src={image[0]} alt={name} />
+                <img className='opacity-95 hover:opacity-100 transition-opacity ease-in-out rounded-xl ' src={image[0]} alt={name} />
             </div>
 
-            <p className='pt-3 pb-1 text-sm'>{name}</p>
-            <p className='text-sm font-medium'>{currency}{price}</p>
+            <p className='pt-3 pb-1 text-sm text-center font-extrabold'>{name}</p>
+            <p className='text-sm text-center font-extrabold'>{currency}{price}</p>
         </Link>
     )
 }
